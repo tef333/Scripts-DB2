@@ -1,6 +1,6 @@
 # Oracle SQL & PL/SQL Scripts 📚
 
-**Autoras:** Estefania Paredes Castañeda · Santiago Rojas Galeano  
+**Autores:** Estefania Paredes Castañeda · Santiago Rojas Galeano  
 **Curso:** Bases de Datos 2  
 **Base de datos:** Oracle (esquema HR + esquemas propios)
 
