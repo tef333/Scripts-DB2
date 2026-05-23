@@ -1,38 +1,96 @@
-# Oracle SQL & PL/SQL Scripts 📚
+# Scripts DB2
 
-**Autores:** Estefania Paredes Castañeda · Santiago Rojas Galeano  
-**Curso:** Bases de Datos 2  
-**Base de datos:** Oracle (esquema HR + esquemas propios)
+Repositorio academico para Bases de Datos 2.
 
----
+Contiene dos bloques separados:
 
-## Estructura del repositorio
+- `proyecto-nexus-marketplace/`: proyecto final Nexus Marketplace, con MySQL como base relacional y MongoDB como base NoSQL.
+- `ejercicios-oracle/`: ejercicios independientes de Oracle SQL y PL/SQL desarrollados durante el curso.
 
+## Estructura
+
+```text
+Scripts-DB2/
+|-- proyecto-nexus-marketplace/
+|   |-- mysql/
+|   |   |-- data/
+|   |   |-- reports/
+|   |   `-- docs/
+|   `-- mongodb/
+|       |-- scripts/
+|       `-- docs/
+`-- ejercicios-oracle/
+    |-- 01_consultas_sql/
+    |-- 02_plsql_anonimos/
+    |-- 03_procedimientos/
+    |-- 04_triggers_excepciones/
+    `-- 05_taller_final/
 ```
-oracle-sql-scripts/
-│
-├── 01_consultas_sql/          # Consultas SQL (JOINs, funciones, jerarquías)
-├── 02_plsql_anonimos/         # Bloques anónimos PL/SQL (variables, ciclos, cursores)
-├── 03_procedimientos/         # Stored procedures y permisos
-├── 04_triggers_excepciones/   # Triggers DML y manejo de excepciones
-└── 05_taller_final/           # Taller T1: ajuste salarial con ACID
+
+## Proyecto Nexus Marketplace
+
+Nexus Marketplace utiliza dos motores:
+
+- **MySQL 8.x** para datos relacionales y transaccionales: usuarios, clientes, administradores, categorias, productos, inventario, carritos, pedidos, pagos y envios.
+- **MongoDB** para datos flexibles o semiestructurados: resenas, valoraciones, comentarios, especificaciones tecnicas variables y caracteristicas adicionales.
+
+### MySQL
+
+Archivos principales:
+
+```text
+proyecto-nexus-marketplace/mysql/data/01_datos_iniciales_marketplace.sql
+proyecto-nexus-marketplace/mysql/reports/01_reportes_nexus_marketplace.sql
+proyecto-nexus-marketplace/mysql/docs/modelo-relacional.md
 ```
 
----
+Los reportes SQL incluyen:
 
-## Descripción por carpeta
+- Ventas totales por cliente.
+- Productos mas vendidos.
+- Estado actual del inventario.
+- Ingresos mensuales.
+- Ventas por metodo de pago.
+- Ventas por categoria.
+- Distribucion geografica de clientes y ventas.
+- Resumen ejecutivo de indicadores generales.
 
-### 01 — Consultas SQL
-Consultas sobre el esquema `HR` de Oracle. Incluye LEFT JOINs, funciones de cadena (`LPAD`, `SUBSTR`), `GROUP BY`, `HAVING`, y jerarquías con self-join.
+### MongoDB
 
-### 02 — Bloques PL/SQL anónimos
-Bloques `DECLARE / BEGIN / END` con variables, condicionales `IF`, ciclos `WHILE` y `LOOP`, y un cursor explícito.
+Archivos principales:
 
-### 03 — Procedimientos almacenados
-Stored procedures con parámetros `IN`, convenciones de nomenclatura de variables, y gestión de permisos con `GRANT`.
+```text
+proyecto-nexus-marketplace/mongodb/scripts/01_setup.mongodb.js
+proyecto-nexus-marketplace/mongodb/scripts/02_crud.mongodb.js
+proyecto-nexus-marketplace/mongodb/scripts/03_consultas_complejas.mongodb.js
+proyecto-nexus-marketplace/mongodb/scripts/04_agregaciones.mongodb.js
+proyecto-nexus-marketplace/mongodb/docs/diseno-documental.md
+```
 
-### 04 — Triggers y excepciones
-Estructura de triggers `BEFORE/AFTER` para eventos DML, y bloques con manejo de excepciones (`WHEN OTHERS`, excepciones declaradas por el usuario).
+La base NoSQL se llama:
 
-### 05 — Taller final
-Script completo del taller de ajuste salarial: diagnóstico con CTEs, decisión de elegibles, prevalidación, actualización con SAVEPOINT, auditoría e INSERT en tabla de log, y validación posterior. Aplica propiedades ACID.
+```text
+nexus_marketplace_nosql
+```
+
+Incluye:
+
+- Diseno documental.
+- Patron de Atributo.
+- Patron de Subconjunto.
+- Operaciones CRUD.
+- Consultas complejas.
+- Agregaciones.
+
+## Ejercicios Oracle
+
+Los ejercicios Oracle estan separados del proyecto Nexus Marketplace.
+
+Incluyen:
+
+- Consultas SQL sobre esquema HR.
+- Bloques anonimos PL/SQL.
+- Procedimientos almacenados.
+- Triggers y excepciones.
+- Taller final con enfoque ACID.
+
